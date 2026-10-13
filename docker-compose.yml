@@ -1,0 +1,16 @@
+services:
+  db:
+   image: postgres:16
+   container_name: smart_inventory_db
+   restart: always
+   environment:
+     POSTGRES_USER: inventory_user
+     POSTGRES_PASSWORD: inventory_pass
+     POSTGRES_DB: smart_inventory
+   ports:
+     - "5432:5432"
+   volumes:
+     - postgres_data:/var/lib/postgresql/data
+
+volumes:
+   postgres_data:         
